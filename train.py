@@ -1,4 +1,5 @@
-from mylinearregression import *
+from lib.mylinearregression import *
+import sys
 import pandas as pd
 import numpy as np
 

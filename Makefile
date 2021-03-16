@@ -29,5 +29,8 @@ clean:
 predict:
 	python3.8 predict.py
 
+show:
+	python3.8 show.py
+
 train:
 	python3.8 train.py

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import sys
-from mylinearregression import MyLinearRegression as MLR
-from mylinearregression import minmax_normalization
+from lib.mylinearregression import MyLinearRegression as MLR
+from lib.mylinearregression import minmax_normalization
 
 if __name__ == "__main__":
     if len(sys.argv) != 1:
