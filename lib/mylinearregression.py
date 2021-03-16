@@ -19,10 +19,10 @@ def get_data_split(filename):
 	return ret
 
 def minmax_normalization(x):
-    max = float(np.max(x))
-    min = float(np.min(x))
-    range = max - min
-    return np.divide(np.subtract(x, min), range)
+	max = float(np.max(x))
+	min = float(np.min(x))
+	range = max - min
+	return np.divide(np.subtract(x, min), range)
 
 def data_spliter(x: np.ndarray, y: np.ndarray, proportion: float):
 	"""
@@ -122,11 +122,26 @@ class MyLinearRegression():
 		plt.scatter(x, y, color="orange") #draw the multiple points
 		cost = self.cost_(x, y)
 		plt.plot(x, predicted_values, color="blue", marker="o")
-		plt.xlabel("X")
-		plt.ylabel("Y")
+		plt.xlabel("Normalized KM")
+		plt.ylabel("Price")
 		title = "Cost : " + str(cost)[:9]
 		plt.title(title)
 		plt.show()
+
+	def hist_(self, x: np.ndarray, y: np.ndarray):
+		predicted_values = self.predict_(x)
+		plt.hist(y) #draw the multiple points
+		cost = self.cost_(x, y)
+		plt.hist(predicted_values)
+		plt.xlabel("Normalized KM")
+		plt.ylabel("Price")
+		title = "Cost : " + str(cost)[:9]
+		plt.title(title)
+		plt.show()
+
+
+
+	
 
 # X = np.array([[1., 1., 2., 3.], [5., 8., 13., 21.], [34., 55., 89., 144.]])
 # Y = np.array([[23.], [48.], [218.]])
