@@ -1,10 +1,4 @@
-# 💡 Linear Regression 42
-
-* **Implemeant a linear regressopm algorythm with a single feature able to predict the price of a car for a given mileage.**
-
-**Equation**:  **estimated Price**(mileage) = **Theta0** + (**Thetha1** ∗ mileage)
-
-**Objectif**: Train the algorythm to find the values of **Theta0** and **Theta1** offering the least error without overfitting the data
+# 💡 FT Linear Regression 42
 
 ![myImage](https://media.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif)
 
