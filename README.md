@@ -1,6 +1,6 @@
 # Linear Regression 42
 
-**Implemeant a linear regressopm algorythm with a single feature able to predict the price of a car for a given mileage.*
+**Implemeant a linear regressopm algorythm with a single feature able to predict the price of a car for a given mileage.**
 
 **Equation Forme**:  **estimated Price**(mileage) = **Theta0** + (**Thetha1** ∗ mileage)
 
