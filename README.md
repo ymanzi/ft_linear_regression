@@ -1,4 +1,4 @@
-# Linear Regression 42
+# 💡 Linear Regression 42
 
 * **Implemeant a linear regressopm algorythm with a single feature able to predict the price of a car for a given mileage.**
 
