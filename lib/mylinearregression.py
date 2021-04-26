@@ -94,7 +94,13 @@ class MyLinearRegression():
 		"""
 		return sum(self.cost_elem_(x, y).tolist())
 
-	def fit_(self, x: np.ndarray, y: np.ndarray, alpha = 0.0001, n_cycle = 10000):
+	def batch_gradient_(self, x_plus, x_theta_minus_y, size_):
+		return x_plus.transpose().dot(x_theta_minus_y) / size_
+
+	# def stochastic_gradient_(self, x_plus, x_theta_minus_y, size_=1):
+	# 	The stochastic_gradient could be used with the same function than batch with a batch of size 1
+
+	def fit_(self, x: np.ndarray, y: np.ndarray, alpha = 0.0001, n_cycle = 10000, grad = "batch"):
 		"""
 			Will train our algorythm following the gradient to adjust the teta according to our dataset
 			the gradient is the derivation of the predicted equation in every direction
@@ -105,7 +111,12 @@ class MyLinearRegression():
 		for i in range(n_cycle):
 			x_theta = x_plus.dot(self.theta)  # Predicted values
 			x_theta_minus_y = np.subtract(x_theta, y)
-			gradient = x_plus.transpose().dot(x_theta_minus_y) / y.shape[0]
+			if grad == "batch":
+				# gradient = x_plus.transpose().dot(x_theta_minus_y) / y.shape[0]
+				gradient = self.batch_gradient_(x_plus, x_theta_minus_y ,y.shape[0])
+			elif grad == "stochastic":
+				rand_num = np.random.randint(y.shape[0])
+				gradient = x_plus[rand_num].reshape(1, -1).transpose().dot(np.array([x_theta_minus_y[rand_num]]))
 			self.theta = np.subtract(self.theta, np.multiply(alpha, gradient))
 		return self.theta
 	

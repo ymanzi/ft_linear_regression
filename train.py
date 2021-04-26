@@ -15,9 +15,8 @@ if __name__ == "__main__":
         mlr = MyLinearRegression(theta)
         print("Cost Before train: {}".format(mlr.cost_(x_train, y_train)))
         mlr.fit_(x_train, y_train, alpha=1e-3, n_cycle=1000000)
+        # mlr.fit_(x_train, y_train, alpha=1e-3, n_cycle=1000000, grad="stochastic")
 
         df = pd.DataFrame({"Thetas":mlr.theta})
         df.to_csv("resources/theta.csv", index=False)
         print("Cost After train: {}".format(mlr.cost_(x_train, y_train)))
-
-        # mlr.plot_(x_train, y_train)
